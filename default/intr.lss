@@ -1,0 +1,159 @@
+
+intr.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000108  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000020  00000000  00000000  0000015c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 0000002b  00000000  00000000  0000017c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   0000008a  00000000  00000000  000001a7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 00000056  00000000  00000000  00000231  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   000000d9  00000000  00000000  00000287  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000030  00000000  00000000  00000360  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    0000007b  00000000  00000000  00000390  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   8:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  10:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  14:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  18:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  1c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  20:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  24:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  28:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  2c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  30:	0c 94 5f 00 	jmp	0xbe	; 0xbe <__vector_12>
+  34:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  38:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  3c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  40:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  44:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  48:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  4c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  50:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  54:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  58:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  5c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  60:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  64:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  68:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  6c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  70:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  74:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  78:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  7c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  80:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  84:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  88:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e8 e0       	ldi	r30, 0x08	; 8
+  a0:	f1 e0       	ldi	r31, 0x01	; 1
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	0e 94 70 00 	call	0xe0	; 0xe0 <main>
+  b6:	0c 94 82 00 	jmp	0x104	; 0x104 <_exit>
+
+000000ba <__bad_interrupt>:
+  ba:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000be <__vector_12>:
+    说明：重置计数初值，并对PE3端口取反，开/关声响
+    入口参数：无
+    返回值：无
+    *********************************************/
+    SIGNAL(SIG_OUTPUT_COMPARE1A)
+    {
+  be:	1f 92       	push	r1
+  c0:	0f 92       	push	r0
+  c2:	0f b6       	in	r0, 0x3f	; 63
+  c4:	0f 92       	push	r0
+  c6:	11 24       	eor	r1, r1
+      TCNT1H = 0x00;      //T/C1计数值清零
+  c8:	1d bc       	out	0x2d, r1	; 45
+      TCNT1L = 0x00;
+  ca:	1c bc       	out	0x2c, r1	; 44
+      //对PE3取反，0.5秒改变一次; x ^= 1;
+      if(PORTE & _BV(PE3))
+  cc:	1b 9b       	sbis	0x03, 3	; 3
+  ce:	02 c0       	rjmp	.+4      	; 0xd4 <__vector_12+0x16>
+        PORTE &= ~_BV(PE3);  //输出低电平
+  d0:	1b 98       	cbi	0x03, 3	; 3
+  d2:	01 c0       	rjmp	.+2      	; 0xd6 <__vector_12+0x18>
+      else 
+        PORTE |= (1<<PE3);   //输出高电平
+  d4:	1b 9a       	sbi	0x03, 3	; 3
+    } 
+  d6:	0f 90       	pop	r0
+  d8:	0f be       	out	0x3f, r0	; 63
+  da:	0f 90       	pop	r0
+  dc:	1f 90       	pop	r1
+  de:	18 95       	reti
+
+000000e0 <main>:
+     //主程序
+int main(void) 
+   {
+      DDRE = _BV(PE3);   //初始化端口PE3为输出模式
+  e0:	88 e0       	ldi	r24, 0x08	; 8
+  e2:	82 b9       	out	0x02, r24	; 2
+      PORTE &= _BV(PE3); //输出高电平，蜂鸣器禁止发声
+  e4:	83 b1       	in	r24, 0x03	; 3
+  e6:	88 70       	andi	r24, 0x08	; 8
+  e8:	83 b9       	out	0x03, r24	; 3
+      TCCR1B = 0x00;     //中断控制寄存器清零，停止T/Cl计数  
+  ea:	1e bc       	out	0x2e, r1	; 46
+      OCR1AH = 0x3D;     //设置8MHz、256分频、定时0.5s的比较值， 
+  ec:	8d e3       	ldi	r24, 0x3D	; 61
+  ee:	8b bd       	out	0x2b, r24	; 43
+      OCR1AL = 0x09;     //与TCNTl的计数值进行比较，若匹配产生中断
+  f0:	89 e0       	ldi	r24, 0x09	; 9
+  f2:	8a bd       	out	0x2a, r24	; 42
+      TCCR1A = 0x00;     //T/C1普通端口模式
+  f4:	1f bc       	out	0x2f, r1	; 47
+      TCCR1B = 0x04;     //启动定时器T/C1，256分频
+  f6:	84 e0       	ldi	r24, 0x04	; 4
+  f8:	8e bd       	out	0x2e, r24	; 46
+      TIMSK |= 0x10;     //使能C/Tl比较匹配中断
+  fa:	87 b7       	in	r24, 0x37	; 55
+  fc:	80 61       	ori	r24, 0x10	; 16
+  fe:	87 bf       	out	0x37, r24	; 55
+      sei();             //允许全局中断
+ 100:	78 94       	sei
+ 102:	ff cf       	rjmp	.-2      	; 0x102 <main+0x22>
+
+00000104 <_exit>:
+ 104:	f8 94       	cli
+
+00000106 <__stop_program>:
+ 106:	ff cf       	rjmp	.-2      	; 0x106 <__stop_program>
